@@ -32,14 +32,13 @@ app.set('view engine', 'hbs');
 app.post('/agentforce/getResults/',agentforce.getResults);
 
 app.get('/', function(request, response) {
-    
+    response.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
-
-app.use(express.static(path.join(__dirname, 'public'),{index: false}));
-app.set('views', __dirname + '/views');
 
 app.use('/',express.static('dist'));
 
+if (require.main === module) {
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+}
