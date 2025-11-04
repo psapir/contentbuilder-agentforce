@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html style="background:#ffffff">
+    <head></head>
+    <link rel="stylesheet"
+        href="lib/salesforce-lightning-design-system/styles/salesforce-lightning-design-system.css">
+    <body style=" padding: 20px;">
+         <!-- spinner: display this div and hide main grid div while loading data -->
+         <div id="spinner" class="spinner" style="display: none;">
+            <div class="slds-spinner_container"></div>
+            <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+        <!--/ spinner-->
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-clearfix slds-size-12-of-12">
+            <!-- form -->
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="txt-prompt">Prompt</label>
+                <div class="slds-form-element__control">
+                    <textarea id="txt-prompt" placeholder="Enter your prompt here..." class="slds-textarea"></textarea>
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="txt-variations">Number of variations</label>
+                <div class="slds-form-element__control">
+                  <input type="number" id="txt-variations" placeholder="Number of variations" required="" class="slds-input" />
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="txt-tag">Tracking Tag</label>
+                <div class="slds-form-element__control">
+                  <input type="text" id="txt-tag" placeholder="Tracking Tag" required="" class="slds-input" />
+                </div>
+                <div class="slds-text-body_small">Provide a prefix to uniquely identify your variation, you can then use the @generatedContentAlias as a link alias or impression area name.</div>
+            </div>
+            <div class="slds-form-element slds-p-top_small">
+                <button id="btn-generate" class="slds-button slds-button_brand">Generate variations</button>   
+            </div>          
+            <!--/ form -->
+            <!-- results -->
+            <div id="pnl-results" style="display:none">
+                <div class="slds-text-title_caps slds-p-top_small"><b>Results</b></div>
+                <ul id="lst-results" class="slds-has-dividers_bottom-space"></ul>
+                <div class="slds-form-element slds-p-top_small">
+                    <button id="btn-use-results" class="slds-button slds-button_brand">Use suggestions</button>   
+                </div> 
+            </div>
+            <!--/ results -->
+            </div>
+        </div>
+        <!-- le scripts -->
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/blocksdk.js"></script>
+        <script src="js/main.js"></script>
+        <!--/ le scripts -->
+    </body>
+</html>
