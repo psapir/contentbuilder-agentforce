@@ -78,6 +78,9 @@ $(function(){
         
         sdk.setContent(contentBlockContent);
 
+        var superContent = `<div style="height:100px"><h1 style="padding: 50px 0;border: 3px solid royalblue;text-align:center">Agentforce Content</h1></div>`;
+        sdk.setSuperContent(superContent);
+
     });
 
 })
